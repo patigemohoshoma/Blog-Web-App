@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+
+
+    <div class="main-articles">
+
+        <%if(blogPosts.length> 0 ){ %>
+
+            <h1 class="articleHeading">Articles to read</h1>
+            <% blogPosts.forEach((blog)=>{ %>
+
+                <div class="blogEntries">
+                    <li>
+                        <h2>
+                            <%= blog.title %>
+                        </h2>
+                        <p id="content">
+                            <%= blog.post %>
+                        </p>
+                    </li>
+                </div>
+
+                <div class="blogControls">
+                    <!-- The Delete Form -->
+                    <form action="/delete/<%= blog.id %>" method="POST">
+                        <button type="submit" class="delete-btn btn">Delete</button>
+                    </form>
+
+                    <!-- The Edit button -->
+                    <a href="/edit/<%= blog.id %>" class="edit-btn btn">Edit</a>
+                </div>
+                <% }) %>
+
+
+                    <% } else { %>
+                        <h1>Unable to find articles</h1>
+                        <% } %>
+
+
+    </div>
+    <%- include("partials/footer.ejs") %>

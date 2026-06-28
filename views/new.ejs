@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+
+    <div class="main-new card">
+
+        <form action="/submit" method="POST" class="blog form">
+            <div class="first-row">
+                <!-- <span class="blog-title">New Blog Post</span> -->
+                <!-- <span class="blog-date">Today's date</span> -->
+            </div>
+
+            <div class="blog input">
+                <textarea name="title" id="blog-title" placeholder="Article title..."></textarea>
+                <label for="blog-post"></label>
+                <textarea name="post" id="blog-text" placeholder="Write your story..." required></textarea>
+            </div>
+
+            <div class="ctrl-btns">
+                <button class="sub-btn btn">Submit</button>
+                <a href="/" class="cnl-btn btn">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+    <%- include("partials/footer.ejs") %>
