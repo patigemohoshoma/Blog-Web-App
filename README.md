@@ -1,8 +1,8 @@
-Dynamic Node.js Blog Application
+**Dynamic Node.js Blog Application**
 
 A lightweight, server-side rendered web application that allows users to dynamically create, read, update, and delete (CRUD) blog posts. This project serves as a functional demonstration of backend routing, data mutation, template rendering, and CI/CD deployment principles.
 
-CORE FEATURES
+**CORE FEATURES**
 
 1. Create: Users can draft and publish new blog posts through a dedicated form.
 
@@ -12,7 +12,7 @@ CORE FEATURES
 
 4. Delete: Users can permanently remove specific posts from the active feed.
 
-TECH STACK
+**TECH STACK**
 
 1. Backend: Node.js, Express.js
 
@@ -22,7 +22,7 @@ TECH STACK
 
 4. Data Storage: In-memory JavaScript Data Structures
 
-ROUTE ARCHITECTURE
+**ROUTE ARCHITECTURE**
 
 GET / : Renders the main landing page
 
@@ -38,7 +38,7 @@ POST /update/:id : Captures form edits, overwrites the existing post data in mem
 
 POST /delete/:id : Locates a specific post by ID, safely splices it out of the master array, and redirects to /articles
 
-LOCAL INSTALLATION & SETUP
+**LOCAL INSTALLATION & SETUP**
 To run this project locally on your machine, follow these steps:
 
 1. Clone this repository to your local machine.
