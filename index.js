@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('views engine', 'ejs')
+app.set('view engine', 'ejs')
 
 //Viewing the homepage
 app.get("/", (req, res) => {
