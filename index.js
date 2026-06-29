@@ -14,7 +14,7 @@ let blogPosts = [];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(express.static("public"));
+
 
 // Recreate __dirname for ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -22,6 +22,9 @@ const __dirname = path.dirname(__filename);
 
 // Convert your static line to this:
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('views engine', 'ejs')
 
 //Viewing the homepage
 app.get("/", (req, res) => {
