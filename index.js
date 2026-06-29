@@ -1,6 +1,9 @@
 //Importing required packages
 import express from "express"
 import bodyParser from "body-parser";
+import path from "node:path"
+// import path from 'path';
+import { fileURLToPath } from 'url';
 
 //Initializing app as an instance of express and assigning a port
 const app = express();
@@ -11,7 +14,14 @@ let blogPosts = [];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
+
+// Recreate __dirname for ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Convert your static line to this:
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Viewing the homepage
 app.get("/", (req, res) => {
@@ -89,3 +99,5 @@ app.post("/update/:id", (req, res) => {
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`)
 });
+
+module.exports = app;
